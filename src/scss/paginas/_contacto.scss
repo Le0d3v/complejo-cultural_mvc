@@ -1,0 +1,39 @@
+.formulario-contacto {
+  margin: 0 auto;
+  max-width: 50rem;
+  margin-top: 3rem;
+
+  
+  fieldset {
+    border: none;
+   
+
+    legend {
+      font-family: $titulos;
+      font-size: 2.2rem;
+      font-weight: bold;
+    }
+
+    label {
+      font-family: $texto;
+    }
+
+    .campos {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      column-gap: 3rem;
+      
+      select {
+        border: none;
+        width: 100%;
+        padding: 1rem;
+        background-color: $verde-lago;
+        font-size: 2rem;
+        color: $blanco;
+        border-radius: .5rem;
+        margin-bottom: 2rem;
+        font-family: $texto;
+      }
+    }
+  }
+}

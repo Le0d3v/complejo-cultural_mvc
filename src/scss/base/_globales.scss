@@ -1,0 +1,61 @@
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+body {
+  font-size: 1.6rem;
+  line-height: 1.8;
+}
+a {
+  text-decoration: none;
+}
+
+img,
+picture {
+  width: 100%;
+  display: block;
+}
+
+fieldset {
+  border: none;
+}
+
+h1, h2, h3 {
+  text-align: center;
+  padding: 0;
+  margin: 0;
+  font-family: $titulos;
+}
+
+.contenedor {
+  width: 95%;
+  max-width: 120rem;
+  margin: 0 auto;
+}
+
+.alinear-derecha {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.alinear-izquierda {
+  display: flex;
+  justify-content: flex-end;
+}
+
+p {
+  font-family: $texto;
+}
+
+form {
+  @include telefono {
+    margin: 1rem 5rem;
+  }
+}
+
+.centrar {
+  margin: 0 60rem;
+}

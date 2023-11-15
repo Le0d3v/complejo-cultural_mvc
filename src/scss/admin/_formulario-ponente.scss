@@ -1,0 +1,35 @@
+.admin-formulario {
+  margin: 5rem 50rem;
+  background-color: $blanco;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 1rem $negro;
+
+  legend {
+    color: $negro;
+    font-family: $titulos;
+    font-weight: bold;
+    font-size: 3.2rem;
+    text-align: center;
+  }
+
+  fieldset {
+    border: none;
+  }
+
+  .campo {
+    label {
+      color: $negro;
+      font-size: 2rem;
+      font-family: $texto;
+      font-weight: bold;
+    }
+    input {
+      width: 100%;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      border: solid .5rem $gris;
+    }
+  }
+  
+}

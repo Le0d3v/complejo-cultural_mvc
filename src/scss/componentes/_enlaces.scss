@@ -1,0 +1,13 @@
+.logout {
+  padding: 0 8rem 0 0;
+  margin-top: .5rem;
+  border: none;
+  font-family: $texto;
+  background-color: $primario;
+  color: $blanco;
+
+  &:hover {
+    cursor: pointer;
+    color: $gris;
+  }
+}

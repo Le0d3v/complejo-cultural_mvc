@@ -1,0 +1,57 @@
+// Master Page de Administración
+.admin-header {
+  background-color: $primario;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 95rem;
+  font-size: 2rem;
+  box-shadow: 0 .3rem 1rem $negro;
+  p {
+    color: $blanco;
+    padding: 2rem 3rem;
+  }
+  .span {
+    font-weight: bold;
+    font-size: 2rem;
+  }
+  a {
+    margin-top: 1rem;
+    z-index: 2000;
+    font-family: $titulos;
+    padding: 1rem 3rem;
+    color: $blanco;
+    &:hover {
+      color: darken($color: $blanco, $amount: 8);
+    }
+  }
+}
+
+.admin-main {
+  background-color: #2f323f;
+  display: grid;
+  grid-template-columns: .45fr 9.55fr;
+
+  .admin-header {
+    input {
+      margin-left: 15rem;
+    }
+  }
+
+  transition: .5s;
+
+  &.active {
+    grid-template-columns: 1.4fr 8.6fr;
+
+    .admin-header {
+      input {
+        margin-left: 0;
+        margin-right: 8rem;
+      }
+    }
+
+  }
+}
+

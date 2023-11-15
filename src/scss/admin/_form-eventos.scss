@@ -1,0 +1,56 @@
+.formulario-evento {
+  z-index: 1000;
+  margin: 1rem 40rem;
+  padding: 0 3rem;
+  background-color: $blanco;
+  border-radius: 3rem;
+  box-shadow: 0 1rem 1rem $negro;
+
+  .form-2sec {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 5rem;
+  }
+
+  fieldset {
+    border: none;
+  }
+
+  legend {
+    text-align: center;
+    font-size: 2.4rem;
+    font-family: $titulos;
+  }
+
+  input {
+    width: 100%;
+    padding: 1rem;
+    border: .5rem solid $gris;
+    border-radius: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  textarea {
+    width: 100%;
+    border-radius: 1rem;
+    border: none;
+    padding: .3rem;
+    border: .5rem solid $gris;
+  }
+
+  label {
+    font-family: $texto;
+    font-size: 2rem;
+    font-weight: bold;
+  }
+
+  select {
+    font-size: 2rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: $primario;
+    border: none;
+    color: $blanco;
+    border-radius: .5rem;
+  }
+}

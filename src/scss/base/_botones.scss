@@ -1,0 +1,47 @@
+.botones-acciones {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-verde-block {
+  @include boton($verde, block);
+}
+.boton-verde {
+  @include boton($verde, inline-block);
+}
+.boton-azul-block {
+  @include boton($primario, block);
+}
+.boton-azul {
+  @include boton($primario, inline-block);
+}
+
+.boton-verde-lago {
+  @include boton($verde-lago, inline-block);
+}
+
+.boton-actualizar {
+  color: $primario;
+}
+
+.boton-eliminar {
+  color: $rojo;
+  border: none;
+  padding: 0;
+  margin: 0;
+  background-color: $gris;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.boton-volver {
+  padding: 5rem 40rem;
+  text-align: start;
+}
+
+.boton-guardar {
+  padding: 0 3rem;
+  text-align: end;
+}

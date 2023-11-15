@@ -1,0 +1,89 @@
+span {
+  font-weight: bold;
+  font-size:5rem;
+  font-family: $titulos;
+}
+ 
+p {
+  font-size: 2rem;
+}
+
+h3 {
+  margin: 0;
+  padding: 0;
+}
+
+.index-listado {
+  text-align: justify
+}
+
+.admin-index-botones {
+  padding: 5rem 10rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+  row-gap: 3rem;
+  font-family: $texto;
+
+  .admin-btn3 {
+    grid-row: 3 / -1;
+    grid-column: 2 / 3;
+  }
+
+}
+
+.admin-titulo {
+  margin: 8rem 0 0 0; 
+  color: $blanco;
+  padding: 0rem 0rem;
+}
+
+.admin-btn1 {
+  @include adminBoton($amarillo, $negro);
+  @include grid(2, 3rem);
+  box-shadow: 0 1rem 1rem $negro;
+  transition: .5s;
+
+  &:hover{
+    box-shadow: 0 0 5rem $amarillo;
+  }
+
+}
+.admin-btn2 {
+  @include adminBoton($secundario, $negro);
+  @include grid(2, .5);
+  box-shadow: 0 1rem 1rem $negro;
+  transition: .5s;
+  
+  &:hover{
+    box-shadow: 0 0 5rem $secundario;
+  }
+}
+.admin-btn3 {
+  @include adminBoton($verde-lago, $blanco);
+  box-shadow: 0 1rem 1rem $negro;
+  transition: .5s;
+
+  &:hover{
+    box-shadow: 0 0 5rem $verde-lago;
+  }
+
+  .user-logo {
+    margin: 0 auto;
+    width: 17rem;
+
+    &.mini {
+      width: 13rem;
+    }
+  }
+
+  .btn3-2 {
+    @include grid(2, 3rem);
+    text-align: justify;
+  }
+}
+
+@mixin boton($bgColor, $color) {
+  
+}

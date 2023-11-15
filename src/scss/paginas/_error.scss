@@ -1,0 +1,51 @@
+/* Estilo del contenedor de error */
+.error-container {
+  margin: 0 auto;
+  margin: 5rem 60rem;
+  text-align: center;
+  background-color: #ffffff;
+  width: 60rem;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 100px rgba(10, 81, 255, 0.692);
+}
+
+/* Estilo de la imagen de error */
+.error-container img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Estilo del título de error */
+.error-container h1 {
+  font-size: 24px;
+  margin-top: 20px;
+  color: #333;
+}
+
+/* Estilo del texto de error */
+.error-container p {
+  font-size: 16px;
+  color: #666464;
+  margin-top: 10px;
+}
+
+/* Estilo del botón de redireccionar */
+.btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #007bff;
+  font-family: $texto;
+  color: $blanco;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+  transition: background-color .3s ease;
+}
+.btn:hover {
+  background-color: #0056b3;
+}
+.modo-oscuro {
+  background-color: #121212;
+  color: #ffffff;
+}

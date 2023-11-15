@@ -1,0 +1,50 @@
+
+
+.singin-form {
+  padding: 3rem;
+  max-width: 60rem;
+  margin: 1rem auto 5rem auto;
+  border-radius: 1rem;
+  
+  
+  fieldset {
+    border: none;
+    
+    legend {
+      font-family: $titulos;
+      font-size: 2.5rem;
+      font-weight: bold;
+    }
+
+    label {
+      font-family: $texto;
+      font-size: 2.3rem;
+    }
+
+    input {
+      width: 100%;
+      padding: 1rem;
+      border: solid .3rem $gris;
+      border-radius: .5rem;
+    }
+  }
+
+  .formulario-acciones {
+    @include tablet {
+      display: flex;
+      justify-content: space-between;
+      
+      a {
+        margin-top: 2rem;
+      }
+    }
+
+    
+    a {
+      font-size: 1.7rem;
+      font-family: $texto;
+      color: $primario;
+    }
+
+  }
+}

@@ -1,0 +1,31 @@
+.user-contacto {
+  margin: 0 30rem;
+  padding: 3rem;
+  background-color: $gris;
+  border-radius: 3rem;
+
+  .tel-enlace {
+    text-align: center;
+  }
+
+  p, a{
+    text-align: center;
+    font-weight: bold;
+    font-size: 3rem;
+    color: $primario;
+  }
+
+
+  form {
+    label {
+      font-family: $titulos;
+      font-weight: bold;
+    }
+
+    textarea {
+      border: none;
+      border-radius: 1rem;
+      width: 100%;
+    }
+  }
+}

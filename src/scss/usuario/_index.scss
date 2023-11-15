@@ -1,0 +1,9 @@
+.usuario-boton {
+  margin-left: 10rem;
+}
+
+.home-datos-personales {
+  padding: 0 5rem;
+  text-align: justify;
+  @include grid(2, 3rem);
+}

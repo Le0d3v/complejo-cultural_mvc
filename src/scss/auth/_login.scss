@@ -1,0 +1,52 @@
+.formulario-login { 
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 5rem 0 0;
+  
+  fieldset {
+    border: none;
+  }
+}
+
+.campo {
+  label {
+    font-size: 2.3rem;
+    font-family: $titulos;
+  }
+  
+  input {
+    width: 100%;
+    padding: 1rem;
+    border: .5rem solid $gris;
+    border-radius: .5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+.login-enlace {
+  margin: 3rem 0;
+  @include tablet {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  a {
+    display: block;  
+    margin-top: 3rem;
+    text-align: center;
+
+    &.e-1 {
+      font-size: 1.7rem;
+      font-family: $texto;
+      color: $primario;
+    }
+
+    &.e-2 {
+      font-size: 1.7rem;
+      font-family: $texto;
+      color: $rojo;
+    }
+  }
+
+  
+}

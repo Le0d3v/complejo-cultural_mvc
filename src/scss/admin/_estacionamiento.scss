@@ -1,0 +1,60 @@
+.admin-estacionamiento-contenido {
+  .posicion-estado {
+    display: flex;
+    column-gap: 2rem;
+  }
+
+  h2 {
+    color: $blanco;
+  } 
+
+  p {
+    color: $blanco;
+  }
+
+
+  .disponible {
+    margin-top: 1rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: $verde;
+  }
+
+  .ocupado {
+    margin-top: .8rem;
+    width: 2rem;
+    height: 2rem;
+    background-color: $rojo;
+  }
+}
+
+.espacios {
+  padding: 5rem 20rem;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+
+  .espacio {
+    text-align: center;
+    margin: 1rem;
+    width: 5rem;
+    padding: 1rem;
+    background-color: $verde;
+    border-radius: .3rem;
+    
+    p {
+      color: $negro;
+      font-weight: bold;
+      font-family: $titulos;
+      font-size: 2rem;
+    }
+    
+
+    &.no-disp {
+      background-color: $rojo;
+
+      p { 
+        color: $blanco;
+      }
+    }
+  }
+}

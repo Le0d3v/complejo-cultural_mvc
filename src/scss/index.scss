@@ -1,0 +1,43 @@
+// Globales
+@import "base/normalize";
+@import "base/variables";
+@import "base/mixins";
+@import "base/globales";
+@import "base/botones";
+@import "base/background";
+@import "base/dark";
+
+// Componentes
+@import "componentes/tabla";
+@import "componentes/alertas";
+@import "componentes/enlaces";
+
+// admin
+@import "admin/index";
+@import "admin/main";
+@import "admin/config";
+@import "admin/formulario-ponente";
+@import "admin/form-eventos";
+@import "admin/mp";
+@import "admin/estacionamiento";
+@import "admin/contacto";
+
+// Usuario
+@import "usuario/index";
+
+
+// publicas
+@import "paginas/error";
+@import "paginas/index";
+@import "paginas/ubicacion";
+@import "paginas/main";
+@import "paginas/evento";
+@import "paginas/servicios";
+@import "paginas/contacto";
+@import "paginas/nosotros";
+
+// Login
+@import "auth/singin";
+@import "auth/login";
+@import "auth/recuperar";
+

@@ -1,0 +1,21 @@
+.encuentranos-main {
+  p {
+    text-align: center;
+    font-family: $texto;
+    font-size: 2.3rem;
+  }
+  
+  @include desktop {
+    .encuentranos-foto {
+      max-width: 100%;
+      padding: 1rem 40rem;
+      margin: 0 auto;
+    }
+  }
+
+  .mapa {
+    height: 50rem; 
+    width: 100%;
+    margin: 2rem 0 5rem 0;
+  }
+}

@@ -1,0 +1,40 @@
+{
+    "name": "wylso/eventos",
+    "description": "Gestion de eventos MVC",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "MVC\\": "./",
+            "Controller\\": "./controllers",
+            "Model\\":  "./models",
+            "Classes\\": "./classes"
+        }
+    },
+    "authors": [
+        {
+            "name": "Leonardo Torres",
+            "email": "harrywilsonth01@gmail.com"
+        },
+        {
+            "name": "Yeshua Saavedra",
+            "email": "Kevinyeshua8@gmail.com"
+        }, 
+        {
+            "name": "Eduardo Mota",
+            "email": "pedroeduardomotaroque67@gmail.com"
+        }, 
+        {
+            "name": "Melissa Pérez",
+            "email": "Mvpr150403@gmail.com"
+        },
+        {
+            "name": "Rafael Huerta",
+            "email": "oh70009@gmail.com"
+        }
+    ],
+    "require": {
+        "intervention/image": "^2.7",
+        "phpmailer/phpmailer": "^6.8",
+        "vlucas/phpdotenv": "^5.5"
+    }
+}

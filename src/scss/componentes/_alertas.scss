@@ -1,0 +1,27 @@
+.alerta {
+  background-color: $verde;
+  padding: 0.5rem;
+  text-align: center;
+  margin: 1rem 5rem;
+  color: $blanco;
+  background-color: $verde;
+  font-family: $titulos;
+  font-weight: bold;
+  text-transform: uppercase;
+
+  &.error {
+    background-color: $rojo;
+  }
+
+  &.exito {
+    background-color: $verde;
+  }
+
+  &.advertencia {
+    background-color: $amarillo;
+  }
+
+  &.alerta-pequeña {
+    margin: 1rem 60rem;
+  }
+}
