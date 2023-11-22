@@ -9,6 +9,22 @@ use MVC\Router;
 use Intervention\Image\ImageManagerStatic as Image;
 
 class EventosController {
+  public static function evento(Router $router) {
+    $id = valOred("/eventos");
+    $categoria = Evento::inner("categoria", "id_categoria", $id);  
+    $organizador = Evento::inner("organizador", "id_organizador", $id);
+    $lugar = Evento::inner("lugar", "id_lugar", $id);
+    $evento = Evento::find($id);
+
+    $router->render("admin_MP", "/admin/eventos/evento", [
+      "evento" => $evento,
+      "organizador" => $organizador,
+      "categoria" => $categoria,
+      "lugar" => $lugar,
+      "pag" => 2
+    ]);
+  }
+
   /** Controlador para la creación de eventos
    * @param Router $router
    */

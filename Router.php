@@ -1,6 +1,7 @@
 <?php 
 namespace MVC;
 class Router {
+
   // Rutas con metodos $_POST[] y $_GET[] 
   public $rutasGET = [];
   public $rutasPOST = array();
@@ -30,31 +31,44 @@ class Router {
 
     // Arreglo de rutas protegidas
     $rutas_protegidas = [
-      // Tus rutas privadas aqui:
-
       // Admin
       "/admin",
       "/admin/eventos",
-      "/admin/organizadores",
       "/admin/usuarios",
+      "/admin/organizadoes",
       "/admin/estacionamiento",
       "/admin/config",
-    
+      "/admin/logout",
+
       // Eventos
+      "/eventos/evento",
       "/eventos/crear",
       "/eventos/actualizar",
       "/eventos/eliminar",
 
-      // Prganizadores
-      "/organizadores/crear",
-      "/organizadores/actualizar",
-      "/organizadores/eliminar"
+      // Organizadores
+      "organizadores/crear",
+      "organizadores/actualizar",
+      "organizadores/eliminar",
+
+      // usuarios
+      "usuarios/contactar",
+      "usuarios/eliminar",
       
+      // Estacionamiento
+      "estacionamiento/espacio",
+
+      // Usuario
+      "/home",
+      "/home/eventos",
+      "/home/evento",
+      "/home/mis-eventos",
+      "/home/configuracion",
+
     ];
 
     $urlActual = strtok($_SERVER["REQUEST_URI"], "?") ?? "/";
     $metodo = $_SERVER["REQUEST_METHOD"];
-
 
     // Acceder a la función de la url visitada en ese momento
     if($metodo === "GET") {
@@ -74,7 +88,6 @@ class Router {
       call_user_func($fn, $this);
     } else {
       header("Location: /error");
-      
     }
   }
 

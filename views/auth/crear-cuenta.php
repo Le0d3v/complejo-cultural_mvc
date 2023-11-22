@@ -19,7 +19,7 @@
       <input type="date"  name="usuario[fecha_nac]" value="<?php echo s($usuario->fecha_nac);?>">
     </div>
     <div class="campo">
-      <label for="">Número de telefono</label>
+      <label for="">Número de teléfono</label>
       <input type="tel"  name="usuario[telefono]" value="<?php echo s($usuario->telefono);?>">
     </div>
   </fieldset>

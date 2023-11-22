@@ -1,7 +1,6 @@
 <div class="listado-eventos">
-  <?php 
-    foreach($eventos as $evento) { ?>
-      <div class="evento">
+  <?php foreach($eventos as $evento) {?>
+    <div class="evento">
         <div class="evento-foto">
           <img src="/img/<?php echo $evento->imagen?>" alt="imagen-evento" height="300" width="400">
           <div class="evento-titulo">
@@ -14,10 +13,10 @@
           <p>Lugares disponibles: <?php echo $evento->cupo?></p>
         </div>
         <div class="evento-boton">
-          <a href="/evento?id=<?php echo $evento->id?>" class="boton-azul-block">Ver Evento</a>
+          <a href="/home/evento?id=<?php echo $evento->id?>" class="boton-azul-block">Ver Evento</a>
         </div>
       </div>
-      <?php 
+    <?php 
     }
   ?>
 </div>

@@ -46,15 +46,20 @@
             <tr>
               <td><?php echo $evento->id?></td>
               <td><?php echo $evento->nombre?></td>
-              <td><?php echo $categoria->categoria?></td>
+              <td><?php echo $evento->categoria?></td>
               <td><?php echo $evento->cupo?></td>
               <td><?php echo $evento->fecha?></td>
               <td><?php echo $evento->hora_inicio?></td>
               <td><?php echo $evento->hora_fin?></td>
-              <td><?php echo $lugar->lugar?></td>
-              <td><?php echo $organizador->nombre_o . " " . $organizador->apellido?></td>
+              <td><?php echo $evento->lugar?></td>
+              <td><?php echo $evento->nombre_o . " " . $evento->apellido?></td>
               <td class="botones-acciones">
                 <div class="btn-accion-pos">
+                  <a href="/eventos/evento?id=<?=$evento->id?>">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24">
+                      <path fill="none" stroke="#059669" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 6a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V6zm6 11h6"/>
+                    </svg>
+                  </a>
                   <a href="/eventos/actualizar?id=<?php echo $evento->id;?>" class="boton-actualizar">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-edit" width="40" height="40"  viewBox="0 0 24 24" stroke-width="1.5" stroke="#00abfb" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>

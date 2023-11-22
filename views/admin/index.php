@@ -1,23 +1,23 @@
 <input type="hidden" value="<?php echo $pag;?>" id="pag">
 <h1 class="admin-titulo">Panel de Administración</h1>
 <div class="admin-index-botones">
-  <a href="/admin/eventos" class="admin-btn1">
+  <div class="admin-btn1">
     <div>
       <h3>Total de eventos:<h1/>
       <span> <?php echo count($eventos);?> </span>
     </div>
     <div>
-      <h3>Últimos eventos:</h3>
+      <h3>Últimos registros:</h3>
         <div class="index-listado">
           <?php 
             foreach($num_eventos as $evento) { ?>
-              <p> - <?php echo $evento->nombre?></p>  
+              <a href="/eventos/evento?id=<?=$evento->id?>"> - <?php echo $evento->nombre?></a>  
               <?php 
             }
           ?>
         </div>
     </div>
-  </a>
+  </div>
   <a href="/admin/config" class="admin-btn3">
     <h3>Mi cuenta</h3>
     <div class="btn-3-1">
@@ -41,21 +41,21 @@
     </div>
     <hr>
   </a>
-  <a href="/admin/usuarios" class="admin-btn2">
+  <div class="admin-btn2">
     <div>
-      <h3>Usuarios: </h3>
-      <span><?php echo count($usuarios)?></span>
+      <h3>Organizadores: </h3>
+      <span><?php echo count($organizadores)?></span>
     </div>
     <div>
-      <h3>Usuarios nuevos:</h3>
+      <h3>Últimos registros:</h3>
       <div class="index-listado">
         <?php 
-          foreach($num_usuarios as $usuario) { ?>
-            <p> - <?php echo $usuario->nombre?> : <?php echo $usuario->email?></p>  
+          foreach($num_organizadores as $organizador) { ?>
+            <a href="/admin/contactar?id=<?= $organizador->id?>"> - <?php echo $organizador->nombre_o?> <?php echo $organizador->apellido?></a>  
             <?php 
           }
         ?>
       </div>
     </div>
-  </a>
+  </div>
 </div>

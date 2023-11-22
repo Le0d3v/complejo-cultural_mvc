@@ -14,7 +14,7 @@
           <input type="text" name="apellido" id="apellidos" placeholder="Tus Apellidos">
         </div>
         <div class="campo">
-          <label for="telefono">Telefono</label>
+          <label for="telefono">Teléfono</label>
           <input type="tel" name="telefono" id="telefono" placeholder="000-000-00">
         </div>
         <div class="campo">

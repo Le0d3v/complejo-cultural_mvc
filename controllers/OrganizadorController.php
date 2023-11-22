@@ -5,6 +5,7 @@ use Model\Organizador;
 use MVC\Router;
 
 class OrganizadorController {
+  
   /** Controlador para la creación de ponentes
    * @param Router $router
    */

@@ -7,17 +7,22 @@ function iniciarApp() {
   initMap();
   onYouTubeIframeAPIReady();
   navResponsive();
+  getEventos();
 } 
 
 // DARK MODE
 
 // Menú Responsivo 
 function navResponsive() {
-  const navegacion = document.querySelector(".navegacion-enlaces");
-  const boton = document.querySelector(".btn-resp");
-  boton.addEventListener("click", () => {
-    navegacion.classList.toggle("nav-resp")
-  })
+  try {
+    const navegacion = document.querySelector(".navegacion-enlaces");
+    const boton = document.querySelector(".btn-resp");
+    boton.addEventListener("click", () => {
+      navegacion.classList.toggle("nav-resp")
+    })
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 // API para mapa de Google Maps
@@ -176,10 +181,92 @@ async function apiServicios() {
     } catch (error) {
       console.log();
     }
-
-    // Iterar los resultados del archivo JSO
   } catch (error) {
     console.log(error);
   }
 }
 
+// API de eventos
+async function getEventos() {
+  try {
+    const resultado = await fetch(`${location.origin}/api/eventos`)
+    const eventos = await resultado.json();
+  
+
+    try {
+      eventos.forEach( evento => {
+        // Obtener variables del evento
+        const {id, nombre, imagen, descripcion, fecha, hora_inicio, disponibles } = evento;
+
+        // Contenedores
+        const fichaEvento = document.createElement("DIV");
+        const foto = document.createElement("DIV");
+        const titulo = document.createElement("DIV");
+        const info = document.createElement("DIV");
+        const boton = document.createElement("DIV");
+
+        // Clases para los Contenedores
+        fichaEvento.classList.add("evento");
+        foto.classList.add("evento-foto");
+        titulo.classList.add("evento-titulo");
+        info.classList.add("evento-info");
+        boton.classList.add("evento-boton");
+
+        // Nombre del evento
+        const nombreEv = document.createElement("H1");
+        nombreEv.textContent = nombre;
+
+        // Imagen del evento
+        const img = document.createElement("IMG");
+        img.setAttribute("src", `/img/${imagen}`);
+        img.setAttribute("height", `300`);
+        img.setAttribute("width", `400`);
+
+        // Fecha del evento
+        const fechaEv = document.createElement("P");
+        fechaEv.classList.add("evento-fecha");
+        fechaEv.textContent = `${fecha} - ${hora_inicio}`;
+
+        // Descripción del evento
+        const texto = document.createElement("P");
+        texto.textContent = descripcion;
+
+        // Espacios disponibles del evento
+        const espacios = document.createElement("P");
+        espacios.textContent = `Lugares disponibles: ${disponibles}`
+
+        // Botón del evento
+        const botonEvento = document.createElement("A");
+        botonEvento.textContent = "Ver Evento";
+        botonEvento.classList.add("boton-azul-block");
+        botonEvento.setAttribute("href", `/home/evento?id=${id}`);
+
+        // Agregar los elementos al HTML
+        // Contenedor de foto
+        titulo.appendChild(nombreEv);
+        foto.appendChild(img);
+        foto.appendChild(titulo);
+
+        // Contenedor de información.
+        info.appendChild(fechaEv);
+        info.appendChild(texto);
+        info.appendChild(espacios);
+
+        // Boton
+        boton.appendChild(botonEvento);
+
+        // Agregar la ficha al HTML.
+        fichaEvento.appendChild(foto);
+        fichaEvento.appendChild(info);
+        fichaEvento.appendChild(boton);
+
+        document.querySelector("#listado-eventos").appendChild(fichaEvento);
+
+      })
+    } catch (error) {
+      console.log(error);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}

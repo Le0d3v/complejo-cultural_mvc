@@ -9,7 +9,7 @@
           <path d="M12 12l0 2.5" />
         </svg>
       </div>
-    <p>En CCU nos enfocamos principalmente en la seguridad de nuestras instalaciones y sobre todo de nuestros clientes. Brindamos una experiencia segura y confiuable en nuestros usuarios, brindando la mejor experiencia de estancia.</p>
+    <p>En CCU nos enfocamos principalmente en la seguridad de nuestras instalaciones y sobre todo de nuestros clientes. Brindamos una experiencia segura y confiable en nuestros usuarios, brindando la mejor experiencia de estancia.</p>
   </div>
 
   <div class="nosotros-icono">
@@ -37,6 +37,6 @@
         <path d="M15 19l2 2l4 -4" />
       </svg>
     </div>
-    <p>Contamos con uextenso calendario que brinda que brinda servicio todo del año, realizando eventos de temporada, eventos especiales y eventos casuales personalizados con fechas y horas accesibles para todos.</p>
+    <p>Contamos con uextenso calendario que brinda servicio todo del año, realizando eventos de temporada, eventos especiales y eventos casuales personalizados con fechas y horas accesibles para todos.</p>
   </div>
 </div>

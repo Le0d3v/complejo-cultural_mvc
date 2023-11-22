@@ -11,7 +11,7 @@
   <div class="index-eventos">
     <div class="index-cabecera">
       <h1>Eventos</h1>
-      <h2>¡Acompañanos en nuestros proximos eventos!</h2>
+      <h2>¡Acompañanos en nuestros próximos eventos!</h2>
       <?php include "listado-eventos.php"?>
       <div class="boton-guardar">
         <a href="/eventos" class="boton-azul">Ver todos los eventos</a>

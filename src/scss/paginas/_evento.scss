@@ -15,6 +15,22 @@
   
 }
 
+#listado-eventos {
+  @include tablet {
+    margin: 5rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    column-gap: 3rem;
+  }
+  
+  @include desktop {
+    margin: 5rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 3rem;
+  }
+}
+
 .evento {
   padding: 3rem;
   background-color: $blanco;

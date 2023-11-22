@@ -2,6 +2,36 @@
   margin-left: 10rem;
 }
 
+.user-index-botones {
+  padding: 5rem 10rem;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 5rem;
+  row-gap: 3rem;
+  font-family: $texto;
+}
+
+.user-btn1 {
+  @include adminBoton($amarillo, $negro);
+  transition: .5s;
+
+  &:hover{
+    box-shadow: 0 0 3rem $amarillo
+  }
+}
+
+.user-btn2 {
+  @include adminBoton($secundario, $negro);
+  transition: .5s;
+
+  &:hover{
+    box-shadow: 0 0 3rem $secundario
+  }
+}
+
+
+
 .home-datos-personales {
   padding: 0 5rem;
   text-align: justify;

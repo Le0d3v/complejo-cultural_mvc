@@ -13,10 +13,6 @@ h3 {
   padding: 0;
 }
 
-.index-listado {
-  text-align: justify
-}
-
 .admin-index-botones {
   padding: 5rem 10rem;
   margin: 0 auto;
@@ -30,7 +26,6 @@ h3 {
     grid-row: 3 / -1;
     grid-column: 2 / 3;
   }
-
 }
 
 .admin-titulo {
@@ -39,12 +34,28 @@ h3 {
   padding: 0rem 0rem;
 }
 
+.index-listado {
+  text-align: justify;
+  a {
+    display: block;
+    color: $negro;  
+    font-size: 2rem;
+  
+    &:hover {
+      color: $menu;
+    }
+  }
+}
+
+
 .admin-btn1 {
   @include adminBoton($amarillo, $negro);
   @include grid(2, 3rem);
   box-shadow: 0 1rem 1rem $negro;
   transition: .5s;
 
+  
+  
   &:hover{
     box-shadow: 0 0 5rem $amarillo;
   }

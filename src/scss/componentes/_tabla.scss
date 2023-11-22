@@ -33,9 +33,9 @@ table.admin-tabla {
 
   .botones-acciones {
     display: flex;
-    column-gap: 1rem;
     .btn-accion-pos {
       display: flex;
+      gap: 1rem;
     }
     
     img {

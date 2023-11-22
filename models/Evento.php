@@ -1,7 +1,7 @@
 <?php 
 namespace Model;
 class Evento extends ActiveRecord {
-  public static $columasDB = ["id", "nombre", "cupo", "imagen",  "fecha", "hora_inicio", "hora_fin", "descripcion", "id_categoria", "id_lugar", "id_organizador"];
+  public static $columasDB = [ "id", "nombre", "cupo", "imagen",  "fecha", "hora_inicio", "hora_fin", "descripcion", "disponibles", "id_categoria", "id_lugar", "id_organizador"];
   public static $tabla = "evento";
   public $id;
   public $nombre;
@@ -11,9 +11,11 @@ class Evento extends ActiveRecord {
   public $hora_inicio;
   public $hora_fin;
   public $descripcion;
+  public $disponibles;
   public $id_categoria;
   public $id_lugar;
   public $id_organizador;
+
 
   // Atributos para relaciones con otras tablas
   public $categoria;
@@ -24,7 +26,9 @@ class Evento extends ActiveRecord {
   public $apellido;
   public $telefono;
   public $correo;
-  
+
+
+
   public function __construct($args = []) {
     $this->id = $args["id"] ?? null;
     $this->nombre = $args["nombre"] ?? null;
@@ -34,6 +38,7 @@ class Evento extends ActiveRecord {
     $this->hora_inicio = $args["hora_inicio"] ?? null;
     $this->hora_fin = $args["hora_fin"] ?? null;
     $this->descripcion = $args["descripcion"] ?? null;
+    $this->disponibles = $args["cupo"] ?? null;
     $this->id_categoria = $args["id_categoria"] ?? null;
     $this->id_lugar = $args["id_lugar"] ?? null;
     $this->id_organizador = $args["id_organizador"] ?? null;

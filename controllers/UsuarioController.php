@@ -8,7 +8,9 @@ class UsuarioController {
   public static function index(Router $router) {
     $pag = 1;
     $nombreUsuario = $_SESSION["nombre"]??null;
-    $num_eventos = Evento::get(3, "DESC");  
+
+    $num_eventos = Evento::get(5, "ASC"); 
+
     $pila = new \SplStack();
     
     foreach($num_eventos as $evento) {
@@ -19,7 +21,7 @@ class UsuarioController {
     $router->render("user-MP", "/usuario/home", [
       "pag" => $pag,
       "nombreUsuario" => $nombreUsuario,
-      "num_eventos" => $pila
+      "pila" => $pila
     ]);
   }
 
@@ -43,7 +45,14 @@ class UsuarioController {
       "evento" => $evento,
       "organizador" => $organizador,
       "categoria" => $categoria,
-      "lugar" => $lugar
+      "lugar" => $lugar,
+      "pag" => 2
+    ]);
+  }
+
+  public static function misEv(Router $router) {
+    $router->render("user-MP", "/usuario/registro", [
+      "pag" => 3
     ]);
   }
 }

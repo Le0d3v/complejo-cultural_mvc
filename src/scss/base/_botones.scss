@@ -7,14 +7,21 @@
 .boton-verde-block {
   @include boton($verde, block);
 }
+
 .boton-verde {
   @include boton($verde, inline-block);
 }
+
 .boton-azul-block {
   @include boton($primario, block);
 }
+
 .boton-azul {
   @include boton($primario, inline-block);
+}
+
+.boton-rojo {
+  @include boton($rojo, inline-block);
 }
 
 .boton-verde-lago {

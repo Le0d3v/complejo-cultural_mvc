@@ -1,6 +1,9 @@
 <?php 
 namespace Model;
 
+/** Clase Padre para interactuar con la base de datos.
+ * Los modelos heredan de esta clase para obtener toda la funcionalidad lógica con la base de datos.
+ */
 class ActiveRecord {
   // Base de Datos
   protected static $db;
@@ -40,6 +43,8 @@ class ActiveRecord {
 
   /** Busca una registro en la base de datos a traves una condición where y lo retorna como un objeto
   * @return object
+  * @param string $columna
+  * @param mixed $valor
   */
   public static function where(string $columna, string $valor) {
     $query = "SELECT * FROM " . static::$tabla . " WHERE $columna = '$valor'";
@@ -65,10 +70,8 @@ class ActiveRecord {
    */
   public static function inner(string $tabla, string $columna, $id = 15) {
     $query = "SELECT * FROM " . static::$tabla . " INNER JOIN " . $tabla . " ON " . static::$tabla . "." . $columna . " = " . $tabla . ".id AND " . static::$tabla . ".id = " . $id. " LIMIT 1;";
-    
-    
-    $resultado = self::consultarSQL($query);
-    
+
+    $resultado = self::consultarSQL($query);    
     return array_shift($resultado);
   }
 
@@ -118,7 +121,7 @@ class ActiveRecord {
     // Saitizar los datos
     $atributos = $this->sanitizarDatos();
     $valores = [];
-
+    
     // Asignar los valores sanitizados a un arreglo para la consulta 
     foreach($atributos as $key => $value) {
       $valores[] = "$key='$value'";
@@ -141,8 +144,9 @@ class ActiveRecord {
 
   /** Elimina un registro en la base de datos
   * @return void
+  * @param string $view
   */
-  public function eliminar($view) {
+  public function eliminar(string $view) : void {
     // Consulta para eliminar el registro
     $query = "DELETE FROM " . static::$tabla . " WHERE id = " . self::$db->escape_string($this->id);
     $resultado = self::$db->query($query);
@@ -280,4 +284,5 @@ class ActiveRecord {
     }
   }
 }
+
 ?>

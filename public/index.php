@@ -3,19 +3,17 @@
 
   use MVC\Router;
   use Controller\AdminController;
-use Controller\APIController;
-use Controller\EstacionamientoController;
-use Controller\EventosController;
+  use Controller\APIController;
+  use Controller\EstacionamientoController;
+  use Controller\EventosController;
   use Controller\LoginController;
   use Controller\OrganizadorController;
   use Controller\PaginasController;
   use Controller\UsuarioController;
-use Model\Estacionamiento;
-
-  $router = new Router();
 
   /** ROUTING DE LA APLICACIÓN */
-  
+  $router = new Router();
+
   // Zona pública
   $router->get("/", [PaginasController::class, "index"]);
   $router->get("/error", [PaginasController::class, "error"]);
@@ -50,6 +48,7 @@ use Model\Estacionamiento;
   $router->post("/admin/logout", [AdminController::class, "logout"]);
 
   // Zona privada(Eventos)
+  $router->get("/eventos/evento", [EventosController::class, "evento"]);
   $router->get("/eventos/crear", [EventosController::class, "crear"]);
   $router->post("/eventos/crear", [EventosController::class, "crear"]);
   $router->get("/eventos/actualizar", [EventosController::class, "actualizar"]);
@@ -76,13 +75,11 @@ use Model\Estacionamiento;
 
   // Zona privada (Estacionamiento)
   $router->get("/estacionamiento/espacio", [EstacionamientoController::class, "espacio"]);
+  
+  // APIS
   $router->get("/api/espacios", [APIController::class, "index"]);
+  $router->get("/api/eventos", [APIController::class, "eventos"]);
+  $router->get("/api/login", [APIController::class, "login"]);
   
-
   $router->comprobarRutas();
-  
 ?>
-
-
-
-

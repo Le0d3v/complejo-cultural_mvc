@@ -1,5 +1,6 @@
 <?php 
 namespace Controller;
+use Model\ActiveRecord;
 use MVC\Router;
 use Model\Organizador;
 use Model\Evento;
@@ -15,12 +16,13 @@ class AdminController {
   */
   public static function index(Router $router) : void {
     $pag = 1;
-    $num_eventos = Evento::get(3, "DESC");
-    $num_usuarios = Usuario::get(3, "DESC");
+    $num_eventos = Evento::get(5, "DESC");
+    $num_organizadores = Organizador::get(3);
     $usuarios = Usuario::all();
     $nombre_admin = $_SESSION["nombre"]??null;
     $organizadores = Organizador::all();
     $eventos = Evento::all();
+
     $router->render("admin_MP", "admin/index", [
       "organizadores" => $organizadores,
       "eventos" => $eventos,
@@ -28,7 +30,7 @@ class AdminController {
       "pag" => $pag,
       "usuarios" => $usuarios,
       "num_eventos" => $num_eventos,
-      "num_usuarios" => $num_usuarios
+      "num_organizadores" => $num_organizadores
     ]);
   }
 
@@ -36,9 +38,24 @@ class AdminController {
    * @param Router $router
   */
   public static function eventos(Router $router) {
+
+    $query = "SELECT 
+    categoria.categoria,
+    organizador.nombre_o, 
+    organizador.apellido,
+    lugar.lugar,
+    evento.id, evento.nombre, evento.cupo, evento.fecha, evento.hora_inicio, evento.hora_fin
+    FROM evento
+    INNER JOIN categoria ON categoria.id = evento.id_categoria
+    INNER JOIN organizador ON organizador.id = evento.id_organizador
+    INNER JOIN lugar ON lugar.id = evento.id_lugar";
+
+    $eventos = Evento::consultarSQL($query);
+    
+    //debuguear($eventos);
+
     $pagina = 2;
     $nombre_admin = $_SESSION["nombre"]??null;
-    $eventos = Evento::all();
     $organizador = Evento::inner("organizador", "id_organizador");
     $lugar = Evento::inner("lugar", "id_lugar");
     $categoria = Evento::inner("categoria", "id_categoria");
@@ -83,6 +100,7 @@ class AdminController {
     $organizadores = Organizador::all();
     $resultado = $_GET["resultado"] ?? null;
     $numero = count($organizadores);
+    
     $router->render("admin_MP", "admin/organizadores/organizadores", [
       "organizadores" => $organizadores,
       "resultado" => $resultado,
