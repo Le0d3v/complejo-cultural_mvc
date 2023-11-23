@@ -2,6 +2,8 @@
 namespace Controller;
 
 use Model\Evento;
+use Model\Evento_usuario;
+use Model\Registro;
 use MVC\Router;
 
 class UsuarioController {
@@ -51,6 +53,18 @@ class UsuarioController {
   }
 
   public static function misEv(Router $router) {
+    $query = "SELECT 
+    usuario.nombre,
+    evento.nombre, evento.fecha, evento.hora_inicio, evento.hora_fin
+    FROM evento_usuario
+    INNER JOIN usuario ON evento_usuario.usuario_id = usuario.id
+    INNER JOIN evento ON evento_usuario.evento_id = evento.id;";
+
+    $eventos= Registro::consultarSQL($query);
+
+    debuguear($eventos);
+
+
     $router->render("user-MP", "/usuario/registro", [
       "pag" => 3
     ]);

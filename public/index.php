@@ -4,7 +4,8 @@
   use MVC\Router;
   use Controller\AdminController;
   use Controller\APIController;
-  use Controller\EstacionamientoController;
+use Controller\ConfigController;
+use Controller\EstacionamientoController;
   use Controller\EventosController;
   use Controller\LoginController;
   use Controller\OrganizadorController;
@@ -46,6 +47,7 @@
   $router->get("/admin/config", [AdminController::class, "config"]);
   $router->post("/admin/config", [AdminController::class, "config"]);
   $router->post("/admin/logout", [AdminController::class, "logout"]);
+  $router->post("/admin/config", [ConfigController::class, "actualizar"]);
 
   // Zona privada(Eventos)
   $router->get("/eventos/evento", [EventosController::class, "evento"]);

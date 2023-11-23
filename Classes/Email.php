@@ -23,7 +23,7 @@ class Email {
     $email->Password = $_ENV["EMAIL_PASS"];
 
     $email->setFrom('cuentas@complejocu.com');
-    $email->addAddress("cuentas@complejocu.com", "ComplejoCultural.com");
+    $email->addAddress($this->email);
     $email->Subject = "Confirma tu cuenta";
     $email->isHTML(true);
     
