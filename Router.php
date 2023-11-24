@@ -64,7 +64,6 @@ class Router {
       "/home/evento",
       "/home/mis-eventos",
       "/home/configuracion",
-
     ];
 
     $urlActual = strtok($_SERVER["REQUEST_URI"], "?") ?? "/";

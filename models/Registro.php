@@ -2,15 +2,24 @@
 namespace Model;
 
 class Registro extends ActiveRecord {
-  public static $columasDB = ["usuario_id", "evento_id"];
   public static $tabla = "registro";
+  public static $columnasDB = ["usuario_id", "evento_id"];
 
-  public $usuario_id;
-  public $evento_id;
+  public $usuario_id;  
+  public $evento_id;  
+
+  // Atributos para tablas relacionadas
+  public $nombre;  
+  public $fecha;
+  public $hora_inicio;
+  public $hora_fin;
+  public $imagen;
+  public $lugar;
+  public $categoria;
 
   public function __construct($args = []) {
-    $this->usuario_id = $args["usuario_id"];
-    $this->evento_id = $args["evento_id"];
+    $this->usuario_id = $args["usuario_id"] ?? null;
+    $this->evento_id = $args["evento_id"] ?? null;
   }
 }
 ?>

@@ -13,7 +13,7 @@
           <p>Lugares disponibles: <?php echo $evento->cupo?></p>
         </div>
         <div class="evento-boton">
-          <a href="/home/evento?id=<?php echo $evento->id?>" class="boton-azul-block">Ver Evento</a>
+          <a href="/evento?id=<?php echo $evento->id?>" class="boton-azul-block">Ver Evento</a>
         </div>
       </div>
     <?php 

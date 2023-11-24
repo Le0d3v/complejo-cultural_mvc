@@ -5,6 +5,7 @@ namespace Controller;
 use Model\Espacio;
 use Model\Evento;
 use Model\Usuario;
+use Model\Organizador;
 
 class APIController {
   public static function index() {
@@ -33,7 +34,10 @@ class APIController {
     } else {
       echo "NO";
     }
-
+  }
+  public static function organizadores() {
+    $organizadores = Organizador::get(5, "DESC");
+    echo json_encode($organizadores);
   }
 }
 ?>

@@ -4,8 +4,8 @@
   use MVC\Router;
   use Controller\AdminController;
   use Controller\APIController;
-use Controller\ConfigController;
-use Controller\EstacionamientoController;
+  use Controller\ConfigController;
+  use Controller\EstacionamientoController;
   use Controller\EventosController;
   use Controller\LoginController;
   use Controller\OrganizadorController;
@@ -82,6 +82,7 @@ use Controller\EstacionamientoController;
   $router->get("/api/espacios", [APIController::class, "index"]);
   $router->get("/api/eventos", [APIController::class, "eventos"]);
   $router->get("/api/login", [APIController::class, "login"]);
+  $router->get("/api/organizadores", [APIController::class, "organizadores"]);
   
   $router->comprobarRutas();
 ?>

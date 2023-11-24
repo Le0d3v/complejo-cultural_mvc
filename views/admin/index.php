@@ -48,7 +48,7 @@
     </div>
     <div>
       <h3>Últimos registros:</h3>
-      <div class="index-listado">
+      <div id="listado-organizadores" class="index-listado">
         <?php 
           foreach($num_organizadores as $organizador) { ?>
             <a href="/admin/contactar?id=<?= $organizador->id?>"> - <?php echo $organizador->nombre_o?> <?php echo $organizador->apellido?></a>  

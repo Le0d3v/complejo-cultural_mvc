@@ -8,6 +8,7 @@ function iniciarApp() {
   onYouTubeIframeAPIReady();
   navResponsive();
   getEventos();
+  getOrganizadores();
 } 
 
 // DARK MODE
@@ -264,6 +265,30 @@ async function getEventos() {
 
       })
     } catch (error) {
+      console.log(error);
+    }
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+async function getOrganizadores() {
+  try {
+    const resultado = await fetch(`${location.origin}/api/organizadores`);
+    const organizadores = await resultado.json();
+
+    try {
+      organizadores.forEach(organizador => {
+        const {id, nombre, apellido, correo} = organizador;
+
+        const enlace = document.createComment("A");
+        enlace.textContent = `${nombre} ${apellido} - ${correo}`;
+        enlace.setAttribute("href", `/organizadores/organizador?id=${id}`);
+
+        document.querySelector("#listado-organizadores").appendChild(enlace);
+
+      });
+    } catch(error) {
       console.log(error);
     }
   } catch (error) {
