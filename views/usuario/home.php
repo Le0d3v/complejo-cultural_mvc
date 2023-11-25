@@ -25,6 +25,23 @@
   <div class="user-btn2">
     <div>
       <h3>Mi registro</h3>
+      <?php if(count($registro) <= 0) {?>
+        <p>Actualmente no cuentas con registro para algún evento</p>
+        <?php 
+        } else {?>
+            <div class="index-listado">
+              <?php foreach($registro as $eventos) {?>
+                  <a 
+                    href="home/evento?id=<?=$evento->id?>&registro=1">
+                    - <?= $evento->nombre . " " . $evento->fecha?>
+                  </a>
+                <?php 
+                }
+              ?>
+            </div>
+          <?php
+          }
+      ?>
     </div>
   </div>
 </div>

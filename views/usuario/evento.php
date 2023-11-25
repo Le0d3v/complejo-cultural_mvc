@@ -25,7 +25,14 @@
     </div>
     <div class="eventos-acciones">
       <a href="/home/eventos" class="boton-verde">Volver</a>
-      <a href="/home/registro" class="boton-azul">Asistir al evento</a>
+      <?php if($registro != null) {?>
+          <a href="/home/registro" class="boton-azul">Imprimir Boleto</a>
+        <?php 
+        } else { ?>
+            <a href="/home/registro" class="boton-azul">Asistir al evento</a>
+          <?php 
+          }
+        ?>
     </div>
   </div>
 </div>

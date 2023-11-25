@@ -2,7 +2,6 @@
 namespace Controller;
 
 use Model\Evento;
-use Model\Evento_usuario;
 use Model\Registro;
 use MVC\Router;
 
@@ -10,11 +9,17 @@ class UsuarioController {
   public static function index(Router $router) {
     $pag = 1;
     $nombreUsuario = $_SESSION["nombre"]??null;
-
     $num_eventos = Evento::get(5, "ASC"); 
-
     $pila = new \SplStack();
     
+    $query = "SELECT evento.nombre, evento.fecha, registro.evento_id
+    FROM registro
+    INNER JOIN evento ON evento.id = registro.evento_id
+    INNER JOIN usuario ON usuario.id = registro.usuario_id
+    WHERE usuario.id = " . $_SESSION["id"] . " ORDER BY fecha ASC;";
+
+    $registro = Registro::consultarSQL($query);
+
     foreach($num_eventos as $evento) {
       $pila->push($evento);
     }
@@ -23,7 +28,8 @@ class UsuarioController {
     $router->render("user-MP", "/usuario/home", [
       "pag" => $pag,
       "nombreUsuario" => $nombreUsuario,
-      "pila" => $pila
+      "pila" => $pila,
+      "registro" => $registro
     ]);
   }
 
@@ -41,6 +47,7 @@ class UsuarioController {
     $organizador = Evento::inner("organizador", "id_organizador", $id);
     $lugar = Evento::inner("lugar", "id_lugar", $id);
     $evento = Evento::find($id);
+    $registro = $_GET["registro"] ?? null;
     
 
     $router->render("user-MP", "/usuario/evento", [
@@ -48,14 +55,15 @@ class UsuarioController {
       "organizador" => $organizador,
       "categoria" => $categoria,
       "lugar" => $lugar,
-      "pag" => 2
+      "pag" => 2,
+      "registro" => $registro
     ]);
   }
 
   public static function misEv(Router $router) {
     $query = " SELECT 
-    evento.nombre, evento.fecha, evento.hora_inicio, evento.hora_fin, evento.imagen,
-    lugar.lugar,
+    evento_id, evento.nombre, evento.fecha, evento.hora_inicio, evento.hora_fin, evento.imagen,
+    lugar.lugar, evento.descripcion,
     categoria.categoria
     FROM registro
     INNER JOIN usuario ON registro.usuario_id = usuario.id
@@ -66,10 +74,12 @@ class UsuarioController {
 
     $registro = Registro::consultarSQL($query);
 
-    debuguear($registro);
+    
 
     $router->render("user-MP", "/usuario/registro", [
-      "pag" => 3
+      "pag" => 3,
+      "num_eventos" => count($registro),
+      "registro" => $registro
     ]);
   }
 }

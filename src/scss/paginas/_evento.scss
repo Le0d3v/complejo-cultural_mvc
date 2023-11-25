@@ -96,3 +96,19 @@
     }
   }
 }
+
+.evento-ficha-horizontal {
+  border-radius: 2rem;
+  background-color: $gris;
+  padding: 3rem;
+  margin: 5rem 20rem;
+  @include grid(2, 3rem);
+
+  .ficha-h-info {
+    h1 {
+      font-family: $titulos;
+      color: $verde-lago;
+      text-transform: uppercase;
+    }
+  }
+}
