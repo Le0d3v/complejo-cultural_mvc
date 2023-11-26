@@ -10,7 +10,8 @@
   use Controller\LoginController;
   use Controller\OrganizadorController;
   use Controller\PaginasController;
-  use Controller\UsuarioController;
+use Controller\RegistroController;
+use Controller\UsuarioController;
 
   /** ROUTING DE LA APLICACIÓN */
   $router = new Router();
@@ -74,6 +75,9 @@
   $router->get("/home/evento", [UsuarioController::class, "evento"]);
   $router->get("/home/mis-eventos", [UsuarioController::class, "misEv"]);
   $router->get("/home/configuracion", [UsuarioController::class, "config"]);
+  $router->get("/home/evento/registro", [RegistroController::class, "registro"]);
+  $router->post("/home/evento/registro", [RegistroController::class, "registro"]);
+
 
   // Zona privada (Estacionamiento)
   $router->get("/estacionamiento/espacio", [EstacionamientoController::class, "espacio"]);

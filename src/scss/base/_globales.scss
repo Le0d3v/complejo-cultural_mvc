@@ -8,6 +8,11 @@ html {
 body {
   font-size: 1.6rem;
   line-height: 1.8;
+  
+  &.modal {
+    opacity: .5;
+    background-color: $negro;
+  }
 }
 a {
   text-decoration: none;

@@ -66,3 +66,20 @@ table.admin-tabla {
     }
   }
 }
+
+button {
+  border: none;
+  background-color: $gris;
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+dialog {
+  margin: 0 auto;
+  margin-top: 10rem;
+  border: none;
+  padding: 3rem;
+  background-color: $blanco;
+  border-radius: 1rem;
+}

@@ -9,17 +9,18 @@ use Model\Organizador;
 
 class APIController {
   public static function index() {
-    // Obtener los datos 
     $espacios = Espacio::all();
     echo json_encode($espacios);
   }
 
   public static function eventos() {
     $eventos = Evento::all();
-    echo json_encode($eventos);
+    $data["eventos"] = $eventos;
+    echo json_encode($data);
   }
 
   public static function login() {
+    $data = [];
     $email = $_GET["email"];
     $pass = $_GET["pass"];
     
@@ -27,7 +28,8 @@ class APIController {
     if($usuario) {
       $resultado = password_verify($pass, $usuario->password);
       if($resultado) {
-        echo json_encode($usuario);
+        $data["usuario"] = $usuario;
+        echo json_encode($data);
       } else {
         echo "puto";
       }

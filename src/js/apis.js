@@ -9,6 +9,7 @@ function iniciarApp() {
   navResponsive();
   getEventos();
   getOrganizadores();
+  modales();
 } 
 
 // DARK MODE
@@ -294,4 +295,21 @@ async function getOrganizadores() {
   } catch (error) {
     console.log(error);
   }
+}
+
+function modales() {
+  const body = document.querySelector("body");
+  const dialog = document.querySelector(".modal");
+  const shbtn = document.querySelector(".mostrar-modal");
+  const clbtn = document.querySelector(".cerrar-modal");
+
+  shbtn.addEventListener("click", () => {
+    body.classList.add("modal");
+    dialog.showModal();
+  })
+
+  clbtn.addEventListener("click", () => {
+    body.classList.remove("modal");
+    dialog.close();
+  })
 }

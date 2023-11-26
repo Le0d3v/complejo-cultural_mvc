@@ -186,11 +186,11 @@ class ActiveRecord {
     }
   }
 
-    /** METODOS DE VALIDACIÓN **/
+  /** METODOS DE VALIDACIÓN **/
 
-    /** Valida que todos los campos del formulario se encuentren llenos y si no lo estan retorna un arreglo con mensajes de errores.
-    * @return array
-    */
+  /** Valida que todos los campos del formulario se encuentren llenos y si no lo estan retorna un arreglo con mensajes de errores.
+  * @return array
+  */
   public function validar() : array { 
     static::$errores = [];
     return static::$errores;
