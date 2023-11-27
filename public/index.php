@@ -77,6 +77,7 @@ use Controller\UsuarioController;
   $router->get("/home/configuracion", [UsuarioController::class, "config"]);
   $router->get("/home/evento/registro", [RegistroController::class, "registro"]);
   $router->post("/home/evento/registro", [RegistroController::class, "registro"]);
+  $router->get("/home/eliminar", [RegistroController::class, "eliminar"]);
 
 
   // Zona privada (Estacionamiento)

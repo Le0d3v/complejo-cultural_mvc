@@ -43,7 +43,7 @@ class LoginController {
             } else {
               header("Location: /home");
             }
-          }
+          } 
         }
       }
       // Errores para mostrar en caso de errores

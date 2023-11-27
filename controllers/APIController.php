@@ -31,10 +31,10 @@ class APIController {
         $data["usuario"] = $usuario;
         echo json_encode($data);
       } else {
-        echo "puto";
+        echo "Credenciales incorrectas";
       }
     } else {
-      echo "NO";
+      echo "Sin datos";
     }
   }
   public static function organizadores() {

@@ -55,7 +55,7 @@
               <p class="text">Usuarios</p>
             </a>
           </li>
-          <li class="list"  id="s5">
+          <li class="list" id="s5">
             <a href="/admin/estacionamiento" style="--clr:#6fe056;">
               <span class="icon">
                 <ion-icon name="car-outline"></ion-icon>
@@ -63,7 +63,7 @@
               <p class="text">Estacionamiento</p>
             </a>
           </li>
-          <li class="list"  id="s6">
+          <li class="list" id="s6">
             <a href="/admin/config" style="--clr:#11ac92;">
               <span class="icon">
                 <ion-icon name="settings-outline"></ion-icon>

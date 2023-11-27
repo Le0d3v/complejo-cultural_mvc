@@ -21,6 +21,11 @@ class ActiveRecord {
     self::$db = $database;
   }
 
+  public static function query($query) {
+    $resultado = self::$db->query($query);
+    return $resultado;
+  }
+
   /** METODOS DE OBTENCIÓN DE DATOS **/
 
   /** Lista todos registros existentes en la tabla de la base de datos y las devuelve en forma de un arreglo de objetos
@@ -80,7 +85,7 @@ class ActiveRecord {
   /** Función reutilizable para crear un registro nuevo o editar uno existente en la base de datos. Si existe un id de algun registro, se actualizará el registro que contiene este id. Si el id no existe, se crea un nuevo registro.
   * @return void
   */
-  public function guardar($view) {
+  public function guardar($view = "#") {
     if(!is_null($this->id)) {
       // Actualizar un registro
       $this->actualizar($view);

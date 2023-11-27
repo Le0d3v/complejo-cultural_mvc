@@ -29,7 +29,7 @@
           <a href="/home/registro" class="boton-azul">Imprimir Boleto</a>
         <?php 
         } else { ?>
-            <a href="/home/registro" class="boton-azul">Asistir al evento</a>
+            <a href="/home/evento/registro?id=<?= $evento->id?>&user=<?= $_SESSION["id"]?>" class="boton-azul">Asistir al evento</a>
           <?php 
           }
         ?>

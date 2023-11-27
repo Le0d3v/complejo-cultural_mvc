@@ -1,0 +1,67 @@
+.registro-evento {
+  padding: 0 5rem;
+  @include grid(2, 5rem);
+
+  .registro-izquierda {
+    margin-top: 5rem;
+    background-color: $gris;
+    padding: 3rem;
+    border-radius: 1rem;
+    color: $negro;
+  }
+}
+
+.registro-derecha {
+  h1 {
+    font-family: $titulos;
+    text-transform: uppercase;
+    color: $verde-lago;
+  }
+}
+
+.legend {
+  text-align: center;
+  font-family: $titulos;
+  color: $verde-lago;
+  font-size: 2.5rem;
+}
+
+.disabled {
+  &:hover {
+    cursor: no-drop;
+  }
+}
+
+.no-margin-top {
+  margin-top: 0;
+}
+
+.campo-registro {
+  padding: 0 3rem;
+  margin-top: 3rem;
+
+  label {
+    font-family: $titulos;
+    color: $negro;
+    font-size: 2.4rem;
+  }
+
+  input {
+    width: 100%;
+    padding: 1rem;
+    background-color: $blanco;
+    border: none;
+    border-radius: .5rem;
+    font-size: 2rem;
+  }
+
+  select {
+    border: none;
+    border-radius: .5rem;
+    width: 100%;
+    padding: 1rem;
+    background-color: $verde-lago;
+    color: $blanco;
+    margin-bottom: 3rem;
+  }
+}

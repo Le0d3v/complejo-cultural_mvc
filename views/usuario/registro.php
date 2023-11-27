@@ -1,45 +1,52 @@
-<input type="hidden" value="<?php echo $pag;?>" id="pag">
-<h1 class="admin-titulo">Mi registro</h1>
-<div class="usuario-boton">
-  <a href="/home/eventos" class="boton-azul">Asistir a un Evento</a>
+<div class="admin-titulo">
+  <h1>Registro</h1>
 </div>
-<div class="usuario-registro">
-  <?php if($num_eventos === 0) {?>
-    <div class="alerta error">
-      <p>Actualmente no estás registrado a nungún evento</p>
-    </div>
-    <?php 
-    } else { ?>
-      <div class="alerta exito">
-        <p>Actualmente cuentas con registro en los siguientes eventos</p>
-      </div>
-      <div class="usuario-registro-eventos">
-        <?php foreach($registro as $evento) { ?>
-          <div class="evento-ficha-horizontal">
-            <div class="ficha-h-foto">
-              <img src="/img/<?= $evento->imagen?>" alt="imagen-evento" width="300" height="500">
-            </div>
-            <div class="ficha-h-info">
-              <h1><?= $evento->nombre ?></h1>
-              <hr> 
-              <br>
-              <p>Tipo de Evento: <?= $evento->categoria ?></p>
-              <p>Lugar: <?= $evento->lugar ?></p>
-              <p>Inicia: <?= $evento->hora_inicio;?></p>
-              <p>Termina: <?= $evento->hora_fin ?></p>
-              <br>
-              <hr> <br>
-              <div class="ficha-h-btns">
-                <a href="/home/evento?id=<?= $evento->evento_id?>&registro=1" class="boton boton-azul">Ver Más</a>
-                <a href="" class="boton boton-rojo">Eliminar Registro</a>
-              </div>
-            </div>
-          </div>
-          <?php 
-          }
-        ?>
-      </div>
-    <?php 
-    }
-  ?>
+<div class="boton-volver">
+  <a href="/home/eventos" class="boton-verde">Volver</a>
+</div>
+<div class="registro-evento">
+  <div class="registro-derecha">
+    <h1><?= $evento->nombre ?></h1>
+    <img src="/img/<?= $evento->imagen?>" alt="">
+  </div>
+  <div class="registro-izquierda">
+    <h2>Tu registro</h2>
+    <form class="formulario" method="post">
+      <fieldset>
+        <legend class="legend">Llena el siguiente formulario para continuar</legend>
+        <div class="campo-registro no-margin-top">
+          <label for="nombre">Nombre</label>
+          <input 
+            type="text" 
+            value="<?= $usuario->nombre . " " . $usuario->apellido?>" 
+            class="disabled"
+            disabled
+            name="usuario">
+        </div>
+        <div class="campo-registro">
+          <label for="nombre">Evento</label>
+          <input 
+            type="text" 
+            value="<?= $evento->nombre?>" 
+            class="disabled"
+            disabled
+            name="nombre">
+        </div>
+        <div class="campo-registro">
+          <label for="nombre">Reservar lugar de estacionamiento</label>
+          <select name="espacio" id="">
+            <option value="0" disabled select> -- Seleccione -- </option>
+            <?php foreach($espacios as $espacio) {?>
+            <option value="<?= $espacio->id?>"> Espacio No°<?= $espacio->numero ?></option>
+            <?php 
+                }
+              ?>
+          </select>
+        </div>
+        <div class="boton-guardar">
+          <input type="submit" value="Finalizar Registro" class="boton-azul">
+        </div>
+      </fieldset>
+    </form>
+  </div>
 </div>

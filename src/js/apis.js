@@ -3,13 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function iniciarApp() {
-  apiServicios();
-  initMap();
-  onYouTubeIframeAPIReady();
-  navResponsive();
   getEventos();
-  getOrganizadores();
-  modales();
+  // apiServicios();
+  // initMap();
+  // onYouTubeIframeAPIReady();
+  // navResponsive();
+  // getEventos();
+  // getOrganizadores();
+  // modales();
 } 
 
 // DARK MODE
@@ -194,9 +195,10 @@ async function getEventos() {
     const resultado = await fetch(`${location.origin}/api/eventos`)
     const eventos = await resultado.json();
   
+    
 
     try {
-      eventos.forEach( evento => {
+      eventos.eventos.forEach( evento => {
         // Obtener variables del evento
         const {id, nombre, imagen, descripcion, fecha, hora_inicio, disponibles } = evento;
 
@@ -271,7 +273,7 @@ async function getEventos() {
   } catch (error) {
     console.log(error);
   }
-}
+}s
 
 async function getOrganizadores() {
   try {

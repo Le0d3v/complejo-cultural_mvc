@@ -62,7 +62,7 @@ class UsuarioController {
 
   public static function misEv(Router $router) {
     $query = " SELECT 
-    evento_id, evento.nombre, evento.fecha, evento.hora_inicio, evento.hora_fin, evento.imagen,
+    registro.id, evento_id, evento.nombre, evento.fecha, evento.hora_inicio, evento.hora_fin, evento.imagen,
     lugar.lugar, evento.descripcion,
     categoria.categoria
     FROM registro
@@ -70,13 +70,11 @@ class UsuarioController {
     INNER JOIN evento ON registro.evento_id = evento.id
     INNER JOIN lugar ON evento.id_lugar = lugar.id
     INNER JOIN categoria ON evento.id_categoria = categoria.id
-    where usuario.id = " . $_SESSION["id"] . ";";
+    where usuario.id = " . $_SESSION["id"] . ";";    
 
     $registro = Registro::consultarSQL($query);
 
-    
-
-    $router->render("user-MP", "/usuario/registro", [
+    $router->render("user-MP", "/usuario/mis-ev", [
       "pag" => 3,
       "num_eventos" => count($registro),
       "registro" => $registro

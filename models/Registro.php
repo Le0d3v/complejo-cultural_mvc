@@ -3,10 +3,12 @@ namespace Model;
 
 class Registro extends ActiveRecord {
   public static $tabla = "registro";
-  public static $columnasDB = ["usuario_id", "evento_id"];
+  public static $columnasDB = ["id", "usuario_id", "evento_id", "clave"];
 
+  public $id;
   public $usuario_id;  
   public $evento_id;  
+  public $clave;
 
   // Atributos para tablas relacionadas
   public $nombre;  
