@@ -116,10 +116,12 @@ class AdminController {
   public static function estacionamiento(Router $router) {
     $pag = 5;
     $nombre_admin = $_SESSION["nombre"]??null;
+    $script = "/build/js/reload.js";
         
     $router->render("admin_MP", "admin/estacionamiento/estacionamiento", [
       "nombre_admin" => $nombre_admin,
       "pag" => $pag,
+      "script" => $script
     ]);
   }
 

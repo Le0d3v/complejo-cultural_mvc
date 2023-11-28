@@ -14,3 +14,4 @@
   
 </div>
 <hr>
+<script src="/build/js/reload.js"></script>

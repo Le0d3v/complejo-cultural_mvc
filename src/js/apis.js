@@ -8,7 +8,6 @@ function iniciarApp() {
   initMap();
   onYouTubeIframeAPIReady();
   navResponsive();
-  getEventos();
   getOrganizadores();
   modales();
 } 
@@ -176,10 +175,9 @@ async function apiServicios() {
         numeroEspacio.textContent = numero;
   
         // Agregar los elementos al HTML
-        
         contenedorEspacio.appendChild(numeroEspacio);
         document.querySelector(".espacios").appendChild(linea1);
-        document.querySelector(".espacios").appendChild(contenedorEspacio);      
+        document.querySelector(".espacios").appendChild(contenedorEspacio);    
       });
     } catch (error) {
       console.log();
@@ -194,8 +192,6 @@ async function getEventos() {
   try {
     const resultado = await fetch(`${location.origin}/api/eventos`)
     const eventos = await resultado.json();
-  
-    
 
     try {
       eventos.eventos.forEach( evento => {
