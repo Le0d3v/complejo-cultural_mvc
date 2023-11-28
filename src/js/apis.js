@@ -4,13 +4,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
 function iniciarApp() {
   getEventos();
-  // apiServicios();
-  // initMap();
-  // onYouTubeIframeAPIReady();
-  // navResponsive();
-  // getEventos();
-  // getOrganizadores();
-  // modales();
+  apiServicios();
+  initMap();
+  onYouTubeIframeAPIReady();
+  navResponsive();
+  getEventos();
+  getOrganizadores();
+  modales();
 } 
 
 // DARK MODE

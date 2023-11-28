@@ -89,6 +89,8 @@
   $router->get("/api/eventos", [APIController::class, "eventos"]);
   $router->get("/api/login", [APIController::class, "login"]);
   $router->get("/api/organizadores", [APIController::class, "organizadores"]);
+  $router->get("/api/ws_ev", [APIController::class, "wsEventos"]);
+  $router->get("/api/ws_esp", [APIController::class, "wsEspacios"]);
   
   $router->comprobarRutas();
 ?>

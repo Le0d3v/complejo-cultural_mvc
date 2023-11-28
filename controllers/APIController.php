@@ -41,5 +41,22 @@ class APIController {
     $organizadores = Organizador::get(5, "DESC");
     echo json_encode($organizadores);
   }
+
+  public static function wsEventos() {
+    $eventos = Evento::all();
+    foreach($eventos as $evento) {
+      $data[]["evento"] = $evento;
+    }
+    echo json_encode($data);
+  }
+
+  public static function wsEspacios() {
+    $espacios = Espacio::all();
+    foreach ($espacios as $espacio) {
+      $data[]["espacio"] = $espacio;
+    }
+
+    echo json_encode($data);
+  }
 }
 ?>

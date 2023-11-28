@@ -17,8 +17,6 @@ class RegistroController {
     if($_SERVER["REQUEST_METHOD"] === "POST") {
       $evento = Evento::find($_GET["id"]);
       $usuario = Usuario::find($_GET["user"]);
-      $query = "SELECT clave FROM registro INNER JOIN evento ON evento.id = " . $evento->id;
-      $query .= " INNER JOIN usuario ON usuario.id = " . $usuario->id . " ;";
       $registro = Registro::query($query);
       $lugar = $_POST["espacio"] ?? null;
 
@@ -28,18 +26,19 @@ class RegistroController {
 
       $clave = md5(uniqid(rand(), true));
       
-      $pngQR = QR::crearQR("Acceso a evento: " . $evento->nombre . "\nInvitado: " . $usuario->nombre . " " . $usuario->apellido);
+      $pngQR = QR::crearQR($evento->nombre);
       $pngCB = CodeBar::crearCodeBar($clave);
 
-      file_put_contents("/$nombreQR", $pngQR);
-      file_put_contents("/$nombreCB", $pngCB);
+      file_put_contents("$nombreQR", $pngQR);
+      file_put_contents("$nombreCB", $pngCB);
         
+      $query = "SELECT clave FROM registro INNER JOIN evento ON evento.id = " . $evento->id;
+      $query .= " INNER JOIN usuario ON usuario.id = " . $usuario->id . " ;";
+
       $resultado = Registro::query($query);
 
-      
-      // Crear Codigo de Barras
       if($resultado) {
-        header("Location: /home/mis-eventos");
+        header("Location: /home/mis-eventos?resultado=1");
       }
     }
 
