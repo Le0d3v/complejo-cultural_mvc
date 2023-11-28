@@ -3,6 +3,11 @@ namespace Controller;
 
 use Model\Evento;
 use Model\Registro;
+use Model\Usuario;
+use Classes\Ba;
+use Classes\CodeBar;
+use Classes\QR;
+use Com\Tecnick\Barcode\Barcode;
 use MVC\Router;
 
 class UsuarioController {

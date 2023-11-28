@@ -121,6 +121,7 @@ class EventosController {
 
         // Actualizar en la BD
         $evento->guardar("/admin/eventos");
+        
       }
     
     }

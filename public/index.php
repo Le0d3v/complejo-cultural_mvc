@@ -10,8 +10,8 @@
   use Controller\LoginController;
   use Controller\OrganizadorController;
   use Controller\PaginasController;
-use Controller\RegistroController;
-use Controller\UsuarioController;
+  use Controller\RegistroController;
+  use Controller\UsuarioController;
 
   /** ROUTING DE LA APLICACIÓN */
   $router = new Router();
@@ -77,6 +77,7 @@ use Controller\UsuarioController;
   $router->get("/home/configuracion", [UsuarioController::class, "config"]);
   $router->get("/home/evento/registro", [RegistroController::class, "registro"]);
   $router->post("/home/evento/registro", [RegistroController::class, "registro"]);
+  $router->get("/home/boleto", [RegistroController::class, "boleto"]);
   $router->get("/home/eliminar", [RegistroController::class, "eliminar"]);
 
 

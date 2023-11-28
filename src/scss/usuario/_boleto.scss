@@ -1,0 +1,50 @@
+.boleto {
+  h1 {
+    color: $blanco;
+  }
+  
+  p {
+    color: $gris;
+    font-size: 2.3rem;
+  
+    span {
+      font-size: 2.3rem;
+      color: $blanco;
+      font-family: $titulos;
+    }
+  }
+  
+  margin: 0 40rem;
+  background: rgb(7,3,255);
+background: linear-gradient(270deg, rgba(7,3,255,0.3) 0%, rgba(201,0,255,0.3981967787114846) 54%);
+  padding: 3rem;
+  border-radius: 5rem;
+
+  .boleto-codigos {
+    padding: 0 3rem;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.boleto-info {
+  .boleto-clave {
+    font-family: $titulos;
+    font-weight: bold;
+    text-align: center;
+    color: $blanco;
+    font-size: 4rem;
+  }
+}
+
+.code-bar {
+  width: 40rem;
+  background-color: $gris;
+  padding: 1rem;
+}
+
+.qr-code {
+  margin-top: -6rem;
+  width: 15rem;
+  height: 10rem;
+}

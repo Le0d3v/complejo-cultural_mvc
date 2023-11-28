@@ -1,6 +1,8 @@
 <?php 
 namespace Controller;
 
+use Classes\CodeBar;
+use Classes\QR;
 use Model\Espacio;
 use Model\Evento;
 use Model\Usuario;
@@ -15,13 +17,27 @@ class RegistroController {
     if($_SERVER["REQUEST_METHOD"] === "POST") {
       $evento = Evento::find($_GET["id"]);
       $usuario = Usuario::find($_GET["user"]);
+      $query = "SELECT clave FROM registro INNER JOIN evento ON evento.id = " . $evento->id;
+      $query .= " INNER JOIN usuario ON usuario.id = " . $usuario->id . " ;";
+      $registro = Registro::query($query);
       $lugar = $_POST["espacio"] ?? null;
 
-      $query = "INSERT INTO registro (evento_id, usuario_id) VALUES ";
-      $query .= "($evento->id, $usuario->id);";
+      // Crear QR
+      $nombreQR = md5(uniqid(rand(), true)) . ".png";
+      $nombreCB = md5(uniqid(rand(), true)) . ".png";
+
+      $clave = md5(uniqid(rand(), true));
+      
+      $pngQR = QR::crearQR("Acceso a evento: " . $evento->nombre . "\nInvitado: " . $usuario->nombre . " " . $usuario->apellido);
+      $pngCB = CodeBar::crearCodeBar($clave);
+
+      file_put_contents("/$nombreQR", $pngQR);
+      file_put_contents("/$nombreCB", $pngCB);
         
       $resultado = Registro::query($query);
-        
+
+      
+      // Crear Codigo de Barras
       if($resultado) {
         header("Location: /home/mis-eventos");
       }
@@ -38,6 +54,23 @@ class RegistroController {
     $id = valOred("/home/eventos");
     $registro = Registro::find($id);
     $registro->eliminar("/home/mis-eventos");
+  }
+
+  public static function boleto(Router $router) {
+    $evento = Evento::find($_GET["evento"]);
+    $user = Usuario::find($_GET["user"]);
+    $query = "SELECT * FROM registro WHERE usuario_id = " . $_GET["user"] . " AND evento_id = " . $_GET["evento"];
+
+    $registro = Registro::consultarSQL($query);
+
+    
+
+    $router->render("user-MP", "/usuario/boleto", [
+      "evento" => $evento,
+      "user" => $user,
+      "registro" => $registro, 
+      "pag" => 1
+    ]);
   }
 }
 ?>

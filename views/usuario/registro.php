@@ -37,8 +37,8 @@
           <select name="espacio" id="">
             <option value="0" disabled select> -- Seleccione -- </option>
             <?php foreach($espacios as $espacio) {?>
-            <option value="<?= $espacio->id?>"> Espacio No°<?= $espacio->numero ?></option>
-            <?php 
+                <option value="<?= $espacio->id?>"> Espacio No°<?= $espacio->numero ?></option>
+                <?php 
                 }
               ?>
           </select>

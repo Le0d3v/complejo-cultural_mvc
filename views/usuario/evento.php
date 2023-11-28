@@ -26,7 +26,10 @@
     <div class="eventos-acciones">
       <a href="/home/eventos" class="boton-verde">Volver</a>
       <?php if($registro != null) {?>
-          <a href="/home/registro" class="boton-azul">Imprimir Boleto</a>
+          <a 
+            href="/home/boleto?evento=<?=$evento->id?>&user=<?= $_SESSION["id"]?>" 
+            class="boton-azul">Imprimir Boleto</a>
+          <a href="/home/eliminar?id=<?= $evento->id?>" class="boton boton-rojo">Eliminar Registro</a>
         <?php 
         } else { ?>
             <a href="/home/evento/registro?id=<?= $evento->id?>&user=<?= $_SESSION["id"]?>" class="boton-azul">Asistir al evento</a>
