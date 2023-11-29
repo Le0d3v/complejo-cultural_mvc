@@ -17,7 +17,6 @@ class RegistroController {
     if($_SERVER["REQUEST_METHOD"] === "POST") {
       $evento = Evento::find($_GET["id"]);
       $usuario = Usuario::find($_GET["user"]);
-      $registro = Registro::query($query);
       $lugar = $_POST["espacio"] ?? null;
 
       // Crear QR
@@ -26,15 +25,15 @@ class RegistroController {
 
       $clave = md5(uniqid(rand(), true));
       
-      $pngQR = QR::crearQR($evento->nombre);
+      $pngQR = QR::crearQR("Evento: " . $evento->nombre . ". Usuario: " . $usuario->nombre . " " . $usuario->apellido);
+ 
       $pngCB = CodeBar::crearCodeBar($clave);
 
+      $query = "INSERT INTO registro (evento_id, usuario_id, clave, qr, codebar) VALUES";
+      $query .= "($evento->id, $usuario->id, '$clave', '$nombreQR', '$nombreCB')";
+      
       file_put_contents("$nombreQR", $pngQR);
       file_put_contents("$nombreCB", $pngCB);
-        
-      $query = "SELECT clave FROM registro INNER JOIN evento ON evento.id = " . $evento->id;
-      $query .= " INNER JOIN usuario ON usuario.id = " . $usuario->id . " ;";
-
       $resultado = Registro::query($query);
 
       if($resultado) {
@@ -61,8 +60,6 @@ class RegistroController {
     $query = "SELECT * FROM registro WHERE usuario_id = " . $_GET["user"] . " AND evento_id = " . $_GET["evento"];
 
     $registro = Registro::consultarSQL($query);
-
-    
 
     $router->render("user-MP", "/usuario/boleto", [
       "evento" => $evento,

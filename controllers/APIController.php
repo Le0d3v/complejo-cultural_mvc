@@ -47,6 +47,14 @@ class APIController {
     foreach($eventos as $evento) {
       $data[]["evento"] = $evento;
     }
+
+    $array["eventos"] = $data;
+    echo json_encode($array);
+  }
+
+  public static function ws_evento() {
+    $evento = Evento::find($_GET["id"]);
+    $data["evento"] = $evento;
     echo json_encode($data);
   }
 
@@ -56,7 +64,8 @@ class APIController {
       $data[]["espacio"] = $espacio;
     }
 
-    echo json_encode($data);
+    $array["espacios"] = $data;
+    echo json_encode($array);
   }
 }
 ?>

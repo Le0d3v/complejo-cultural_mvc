@@ -8,8 +8,8 @@ class CodeBar {
     $qr = $barcade->getBarcodeObj(
       "C39",
       "$codigo",
-      "-8",
-      "100",
+      "-30",
+      "500",
       "black",
       array(0, 0, 0, 0,)
     );

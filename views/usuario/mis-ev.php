@@ -31,6 +31,7 @@
               <hr> <br>
               <div class="ficha-h-btns">
                 <a href="/home/evento?id=<?= $evento->evento_id?>&registro=1" class="boton boton-azul">Ver Más</a>
+                <a href="/home/eliminar?id=<?= $evento->id?>" class="boton boton-rojo">Eliminar Registro</a>
               </div>
             </div>
           </div>

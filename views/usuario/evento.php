@@ -29,7 +29,6 @@
           <a 
             href="/home/boleto?evento=<?=$evento->id?>&user=<?= $_SESSION["id"]?>" 
             class="boton-azul">Imprimir Boleto</a>
-          <a href="/home/eliminar?id=<?= $evento->id?>" class="boton boton-rojo">Eliminar Registro</a>
         <?php 
         } else { ?>
             <a href="/home/evento/registro?id=<?= $evento->id?>&user=<?= $_SESSION["id"]?>" class="boton-azul">Asistir al evento</a>

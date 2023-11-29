@@ -68,9 +68,7 @@
                       <path d="M16 5l3 3" />
                     </svg>
                   </a>
-                </div>
-                <div class="eliminar">
-                  <button class="mostrar-modal">
+                  <a href="/eventos/eliminar?id=<?= $evento->id?>">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-trash-x" width="40" height="40" viewBox="0 0 24 24" stroke-width="1.5" stroke="#ff2825" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                       <path d="M4 7h16" />
@@ -78,15 +76,7 @@
                       <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
                       <path d="M10 12l4 4m0 -4l-4 4" />
                     </svg>
-                  </button>
-                  <dialog class="modal">
-                    <p>¿Estas seguro que deseas eliminar este registro?</p>
-                    <b>Una vez eliminado, no habrá marcha atrás</b>
-                    <div class="botones-eliminar">
-                      <button class="boton-azul cerrar-modal">Cerrar</button>
-                      <a href="/eventos/eliminar?id=<?= $evento->id?>" class="boton-rojo">Eliinar</a>
-                    </div>
-                  </dialog>
+                  </a>
                 </div>
               </td>
             </tr>

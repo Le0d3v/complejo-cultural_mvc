@@ -16,8 +16,8 @@
   
   margin: 0 40rem;
   background: rgb(7,3,255);
-background: linear-gradient(270deg, rgba(7,3,255,0.3) 0%, rgba(201,0,255,0.3981967787114846) 54%);
-  padding: 3rem;
+  background: linear-gradient(270deg, rgba(7,3,255,0.3) 0%, rgba(201,0,255,0.3981967787114846) 54%);
+  padding: 3rem 5rem;
   border-radius: 5rem;
 
   .boleto-codigos {
@@ -28,6 +28,11 @@ background: linear-gradient(270deg, rgba(7,3,255,0.3) 0%, rgba(201,0,255,0.39819
 }
 
 .boleto-info {
+  margin-left: 3rem;
+  .boleto-2 {
+    display: flex;
+    justify-content: space-between;
+  }
   .boleto-clave {
     font-family: $titulos;
     font-weight: bold;
@@ -38,13 +43,15 @@ background: linear-gradient(270deg, rgba(7,3,255,0.3) 0%, rgba(201,0,255,0.39819
 }
 
 .code-bar {
-  width: 40rem;
+  margin-top: 2rem;
+  .br-cd {
+    height: 8rem;
+  }
   background-color: $gris;
   padding: 1rem;
 }
 
 .qr-code {
-  margin-top: -6rem;
-  width: 15rem;
-  height: 10rem;
+  margin-right: 3rem;
+  width: 10rem;
 }

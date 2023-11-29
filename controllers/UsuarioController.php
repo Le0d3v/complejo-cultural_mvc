@@ -53,7 +53,6 @@ class UsuarioController {
     $lugar = Evento::inner("lugar", "id_lugar", $id);
     $evento = Evento::find($id);
     $registro = $_GET["registro"] ?? null;
-    
 
     $router->render("user-MP", "/usuario/evento", [
       "evento" => $evento,
