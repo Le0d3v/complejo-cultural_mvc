@@ -1,6 +1,7 @@
 <!-- MASTER PAGE -->
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
   <link rel="website icon" href="/build/img/logo.png">
 </head>
+
 <body class="body">
   <!-- Header -->
   <header class="inicio-header">
@@ -121,4 +123,5 @@
   </script>
   <script src="https://www.youtube.com/iframe_api"></script>
 </body>
+
 </html>
